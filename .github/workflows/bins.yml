@@ -5,6 +5,8 @@ run-name: Binaries Publisher | ${{ github.event_name }} by ${{ github.actor }} o
 on:
   workflow_dispatch:
   push:
+    branches:
+      - test-ci  # <-- Automatically runs on push to test-ci!
     tags:
       - "v[0-9]+.[0-9]+.[0-9]+*"
 

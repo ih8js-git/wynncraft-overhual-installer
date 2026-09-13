@@ -5,8 +5,14 @@ For any kind of support with the installer, either write into the discord or bet
 Also there will be a security warning on windows, because we sure as heck aren't going to pay for a code signing certificate.
 Also this is opensource but if you want to use it for anything make sure to read the license fully.
 
-## OSs
+## Documentation
+
+- [Manifest Documentation](docs/DOCS.md): Detailed documentation on structuring the `manifest.json` file.
+- [System Dependencies & Building](docs/DEPENDENCIES.md): Linux requirements (both runtime and build-time) and compiling from source.
+
+## Supported Platforms
 
 - Windows
-- MacOS
-- Linux
+- macOS
+- Linux *(requires system libraries such as `webkit2gtk` and `xdotool`, see [Dependencies](docs/DEPENDENCIES.md))*
+

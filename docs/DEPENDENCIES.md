@@ -13,7 +13,9 @@ If you are running a pre-built binary on Linux, ensure the following packages ar
 sudo pacman -S xdotool gtk3 webkit2gtk-4.1 openssl
 ```
 
-### Debian / Ubuntu
+### Debian 12+ / Ubuntu 24.04+
+> **Note:** WebKitGTK 4.1 packages require Ubuntu 24.04 (Noble) or Debian 12 (Bookworm) or newer. Older releases such as Ubuntu 22.04 (Jammy) do not provide WebKitGTK 4.1.
+
 ```bash
 sudo apt update
 sudo apt install -y libxdo3 libgtk-3-0 libwebkit2gtk-4.1-0 libssl3
@@ -35,7 +37,9 @@ If you are compiling the installer from source, you will need the C compiler, de
 sudo pacman -S base-devel xdotool gtk3 webkit2gtk-4.1 openssl
 ```
 
-### Debian / Ubuntu
+### Debian 12+ / Ubuntu 24.04+
+> **Note:** Compiling against WebKitGTK 4.1 (`libwebkit2gtk-4.1-dev` / `libjavascriptcoregtk-4.1-dev`) requires Ubuntu 24.04 (Noble) or Debian 12 (Bookworm) or newer. Ubuntu 22.04 (Jammy) does not provide these packages.
+
 ```bash
 sudo apt update
 sudo apt install -y gcc pkg-config libglib2.0-dev libgtk-3-dev libssl-dev \

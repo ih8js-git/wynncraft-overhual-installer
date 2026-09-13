@@ -8,7 +8,7 @@ on:
     types: [published]
   push:
     tags:
-      - "v[0-9]+.[0-9]+.[0-9]+*"
+      - "v[0-9]*.[0-9]*.[0-9]*"
 
 permissions:
   contents: write
@@ -33,7 +33,7 @@ jobs:
             architecture: arm64
             binary-postfix: ""
             binary-name: installer
-          - os: ubuntu-22.04
+          - os: ubuntu-24.04
             os-name: linux
             target: x86_64-unknown-linux-gnu
             architecture: x86_64
@@ -91,13 +91,13 @@ jobs:
           RELEASE_NAME="${{ matrix.binary-name }}-${REF_SLUG}-${{ matrix.os-name }}-${{ matrix.architecture }}"
           ARCHIVE_NAME="$RELEASE_NAME.zip"
 
-          # Copy docs if present
-          cp ../../../README.md . 2>/dev/null || true
-          cp ../../../LICENSE . 2>/dev/null || true
+          # Copy docs
+          cp ../../../README.md .
+          cp ../../../License.txt .
 
           FILES_TO_PACK=("$BINARY_NAME")
           [ -f "README.md" ] && FILES_TO_PACK+=("README.md")
-          [ -f "LICENSE" ] && FILES_TO_PACK+=("LICENSE")
+          [ -f "License.txt" ] && FILES_TO_PACK+=("License.txt")
 
           if [[ "${{ runner.os }}" == "Windows" ]]; then
             7z a "$ARCHIVE_NAME" "${FILES_TO_PACK[@]}"
